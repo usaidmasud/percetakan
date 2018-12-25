@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout/content');
 });
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/kategori', 'Master\KategoriController@index');
+
+
+Route::resource('/persons', 'PersonController');
